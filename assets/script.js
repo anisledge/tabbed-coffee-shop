@@ -2,7 +2,7 @@
 var pages = {
 	init: function() {
 		pages.config = {
-			active: 'index',
+			active: 'home-link',
 			main: $( "main" ),
 			menuLink: $( "#menu-link" ),
 			contactLink: $( "#contact-link"),
@@ -16,27 +16,18 @@ var pages = {
 	},
 	setup: function () {
 		pages.config.main.append(pages.config.home);
-		pages.config.contactLink.click(function() {
-			if (pages.config.active != 'contact') {
+		$("#nav").on('click', function( event ) {
+			var id = event.target.id;
+			if (id != pages.config.active && id != 'nav') {
 				pages.config.main.children("section:nth-child(2)").detach();
-				pages.config.main.append(pages.config.contact);
-				pages.config.active = 'contact';
-			}
-		});
-
-		pages.config.menuLink.click(function() {
-			if (pages.config.active != 'menu') {
-				pages.config.main.children("section:nth-child(2)").detach();
-				pages.config.main.append(pages.config.menu);
-				pages.config.active = 'menu';
-			}
-		});
-
-		pages.config.homeLink.click(function() {
-			if (pages.config.active != 'home') {
-				pages.config.main.children("section:nth-child(2)").detach();
-				pages.config.main.append(pages.config.home);
-				pages.config.active = 'home';
+				pages.config.active = id;
+				if (id == 'menu-link') {
+					pages.config.main.append(pages.config.menu);
+				} else if (id == 'contact-link') {
+					pages.config.main.append(pages.config.contact);
+				} else if (id == 'home-link') {
+					pages.config.main.append(pages.config.home);	
+				}
 			}
 		});
 	},
