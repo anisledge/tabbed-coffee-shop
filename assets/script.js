@@ -19,15 +19,15 @@ var genHome = function() {
 	second_row.children().eq(1).attr('id', 'about');
 	grid.append(first_row).append(second_row).append(third_row);
 	
-	var content = ["<img src='images/espresso.png' alt='espresso'>", 
-						 "<img src='images/coffee.png' alt='coffee'>", 
-						 "<img src='images/donut.png' alt='donuts'>", 
+	var content = ["<img src='assets/espresso.png' alt='espresso'>", 
+						 "<img src='assets/coffee.png' alt='coffee'>", 
+						 "<img src='assets/donut.png' alt='donuts'>", 
 						 'At our Coffee Shop, we want to inspire and enlighten you.\
 						  Come to our Coffee Shop in Colorado Springs for the best \
 						  coffee and atmosphere.', 
-						 "<img src='images/fudge.png' alt='fudge'>", 
-						 "<img src='images/sandwich.png' alt='sandwiches'>", 
-						 "<img src='images/tea.png' alt='tea'>"]
+						 "<img src='assets/fudge.png' alt='fudge'>", 
+						 "<img src='assets/sandwich.png' alt='sandwiches'>", 
+						 "<img src='assets/tea.png' alt='tea'>"]
 	
 	grid.find(".inner").html( function(index, oldText) {
 		$(this).html(content[index]);
@@ -52,17 +52,17 @@ var genMenu = function() {
 	var menu = $("<section id='menu' class='square'>\
 		<h2>Menu</h2></section>");
 	var table = $("<table><tbody>\
-		<tr><td>Americano</td>$4.99</tr>\
-		<tr><td>Espresso</td>$4.99</tr>\
-		<tr><td>Cafe Late</td>$4.99</tr>\
-		<tr><td>Caramel Mocchiato</td>$5.99</tr>\
-		<tr><td>Doppio</td>$4.99</tr>\
-		<tr><td>Hot Chocolate</td>$5.99</tr>\
-		<tr><td>Drip Coffee</td>$2.99</tr>\
-		<tr><td>Hot Tea</td>$3.99</tr>\
-		<tr><td>Fudge</td>$5.99</tr>\
-		<tr><td>Single Donut</td>$2.99</tr>\
-		<tr><td>Sandwich</td>$7.99</tr>\
+		<tr><td>Americano</td><td>$4.99</td></tr>\
+		<tr><td>Espresso</td><td>$4.99</td></tr>\
+		<tr><td>Cafe Late</td><td>$4.99</td></tr>\
+		<tr><td>Caramel Mocchiato</td><td>$5.99</td></tr>\
+		<tr><td>Doppio</td><td>$4.99</td></tr>\
+		<tr><td>Hot Chocolate</td><td>$5.99</td></tr>\
+		<tr><td>Drip Coffee</td><td>$2.99</td></tr>\
+		<tr><td>Hot Tea</td><td>$3.99</td></tr>\
+		<tr><td>Fudge</td><td>$5.99</td></tr>\
+		<tr><td>Single Donut</td><td>$2.99</td></tr>\
+		<tr><td>Sandwich</td><td>$7.99</td></tr>\
 		</tbody></table>");
 	menu.append(table);
 	return menu

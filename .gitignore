@@ -1,5 +1,5 @@
-/images/*
-images/*
+assets/*.jpg
+assets/*.png
 indexNoJQ.html
 menu.html
 contact.html
