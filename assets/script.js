@@ -4,9 +4,7 @@ var pages = {
 		pages.config = {
 			active: 'home-link',
 			main: $( "main" ),
-			menuLink: $( "#menu-link" ),
-			contactLink: $( "#contact-link"),
-			homeLink: $( "#home-link" ),
+			nav: $( "#nav" ),
 			home: pages.genHome(),
 			contact: pages.genContact(),
 			menu: pages.genMenu()
@@ -16,7 +14,7 @@ var pages = {
 	},
 	setup: function () {
 		pages.config.main.append(pages.config.home);
-		$("#nav").on('click', function( event ) {
+		pages.config.nav.on('click', function( event ) {
 			var id = event.target.id;
 			if (id != pages.config.active && id != 'nav') {
 				pages.config.main.children("section:nth-child(2)").detach();
